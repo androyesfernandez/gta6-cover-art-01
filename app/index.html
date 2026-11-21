@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PUERTO CANDELA — Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <aside class="controls">
+    <header class="brand">
+      <h1>PUERTO <span>CANDELA</span></h1>
+      <p class="tagline">Cover Studio — your photos, one neon-sunset poster.</p>
+    </header>
+
+    <section class="group">
+      <h2>1 · Photos</h2>
+      <label class="upload-btn">Add your photos
+        <input id="photo-upload" type="file" accept="image/*" multiple>
+      </label>
+      <div id="photo-strip" class="photo-strip" aria-label="Photos on the cover"></div>
+      <p class="hint">…or start from a sample:</p>
+      <div id="sample-strip" class="sample-strip"></div>
+    </section>
+
+    <section class="group">
+      <h2>2 · Layout</h2>
+      <div id="layout-picker" class="layout-picker"></div>
+    </section>
+
+    <section class="group">
+      <h2>3 · Words &amp; grade</h2>
+      <label>Title <input id="cover-title" type="text" maxlength="26" value="PUERTO CANDELA"></label>
+      <label>Caption <input id="cover-subtitle" type="text" maxlength="34" value="SUNSET HEIST"></label>
+      <label>Sunset grade <input id="grade-range" type="range" min="0" max="100" value="75"></label>
+      <div class="toggles">
+        <label class="check"><input id="grain-toggle" type="checkbox" checked> Film grain</label>
+        <label class="check"><input id="badge-toggle" type="checkbox" checked> Badge</label>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>4 · Frame the panel</h2>
+      <p id="panel-label" class="hint">Click a panel on the cover, then drag it.</p>
+      <label>Panel zoom <input id="zoom-range" type="range" min="100" max="300" value="100"></label>
+    </section>
+
+    <section class="group">
+      <h2>5 · Export</h2>
+      <div id="export-row" class="export-row"></div>
+      <p id="status" role="status"></p>
+    </section>
+  </aside>
+  <section class="stage">
+    <canvas id="cover" width="1080" height="1080" aria-label="Your cover, live preview"></canvas>
+    <p class="stage-hint">Live preview — click a panel to select it, drag to reposition its photo.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
